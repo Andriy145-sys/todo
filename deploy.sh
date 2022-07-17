@@ -9,16 +9,10 @@ npm run build
 # navigate into the build output directory
 cd dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'new deploy'
 
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
-
-git push -f git@github.com:Andriy145-sys/todo.git
+git push -f git@github.com:Andriy145-sys/my_portfolio.git master:gh-pages
 
 cd -
