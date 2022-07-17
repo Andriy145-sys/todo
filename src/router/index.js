@@ -15,13 +15,13 @@ const routes = [
         path: '/todo',
         name: 'todo',
         component: () => import('@/views/ToDo.vue'),
-        meta: { requiresLogout: true }
+        meta: { requiresLogin: true }
     },
     {
         path: '/login',
         name: 'login',
         component: () => import('@/views/Login.vue'),
-        meta: { requiresLogin: true }
+        meta: { requiresLogout: true }
     },
 ]
 
@@ -34,10 +34,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.some(record => record.meta.requiresLogin) && store.getters.loggedUser == null) {
-        next({ name: 'todo' })
+        next({ name: 'login' })
     }
     else if (to.matched.some(record => record.meta.requiresLogout) && store.getters.loggedUser != null) {
-        next({name: 'login'})
+        next({name: 'todo'})
     }
     else {
         next()
