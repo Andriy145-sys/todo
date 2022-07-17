@@ -71,7 +71,7 @@ export default {
   .main_div {
     background-image: url(@/assets/Фон.svg);
     background-repeat: no-repeat;
-    padding-top: 10%;
+    padding-top: 12%;
   }
   .main {
     display: flex;
