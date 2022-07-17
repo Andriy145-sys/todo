@@ -7,7 +7,7 @@
           <input
             class="input"
             type="username"
-            v-model="user.name"
+            v-model.trim="user.name"
             @blur="$v.user.name.$touch()"
           />
           <error-message :message="nameError[0]" v-if="nameError.length" />
@@ -15,7 +15,7 @@
           <input
             class="input"
             type="password"
-            v-model="user.password"
+            v-model.trim="user.password"
             @blur="$v.user.password.$touch()"
           />
           <error-message :message="passwordError[0]" v-if="passwordError.length" />
@@ -62,7 +62,7 @@ export default {
           ? this.updateInfoLogged({
               name: this.user.name,
             }) && this.$router.push({ name: "todo" })
-          : alert("no");
+          : alert("Username or password entered incorrectly");
       }
     },
   },

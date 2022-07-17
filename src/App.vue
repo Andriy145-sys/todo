@@ -3,15 +3,16 @@
     <main>
       <router-view />
     </main>
+    <footer-vue />
   </div>
 </template>
 
 <script>
-//import FooterVue from "./components/Footer.vue";
+import FooterVue from "./components/Footer.vue";
 export default {
   name: "App",
   components: {
-    //FooterVue,
+    FooterVue,
   },
 };
 </script>

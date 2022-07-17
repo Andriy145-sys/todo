@@ -1,19 +1,27 @@
 <template>
   <div>
-    <header class="login_header"></header>
-    <img src="@/assets/Фон.svg" alt="Фон" class="background_img" />
+    <div
+      style="
+        background: linear-gradient(180deg, #00afed 0%, #00569a 100%);
+        padding-top: 10px;
+      "
+    >
+      <header class="login_header">
+        <img src="@/assets/logo.svg" class="header_logo" />
+      </header>
+    </div>
     <div class="main_div">
       <center>
-         <div class="main">
-        <div class="main_text">
-          <span
-            >Welcome to<br />
-            Business Analytics Online</span
-          >
-          <login-description />
+        <div class="main">
+          <div class="main_text">
+            <span
+              >Welcome to<br />
+              Business Analytics Online</span
+            >
+            <login-description />
+          </div>
+          <login-form-vue />
         </div>
-        <login-form-vue />
-      </div>
       </center>
     </div>
   </div>
@@ -31,16 +39,11 @@ export default {
 </script>
 
 <style>
-.login_header {
-  min-height: 93px;
-  height: auto;
-  background: linear-gradient(180deg, #00afed 0%, #00569a 100%);
-}
-
 @media only screen and (max-width: 768px) {
   .main_div {
-    position:absolute;
-    top: 160px;
+    background-image: url(@/assets/Фон.svg);
+    background-repeat: no-repeat;
+    padding-top: 10px;
   }
   .main {
     display: block;
@@ -54,11 +57,25 @@ export default {
     display: block;
     text-align: center;
   }
+  .login_header {
+    height: auto;
+    text-align: start;
+    margin-left: 10px;
+  }
+  .header_logo {
+    height: 50px;
+    width: 70px;
+  }
 }
 @media only screen and (min-width: 768px) {
+  .main_div {
+    background-image: url(@/assets/Фон.svg);
+    background-repeat: no-repeat;
+    padding-top: 10%;
+  }
   .main {
     display: flex;
-    width: 80%
+    width: 80%;
   }
   .main_text {
     font-weight: 400;
@@ -69,10 +86,15 @@ export default {
     display: block;
     text-align: start;
   }
+  .login_header {
+    min-height: 96px;
+    height: auto;
+    width: 80%;
+    text-align: start;
+  }
+  .header_logo {
+    height: 66px;
+    width: 103px;
+  }
 }
-
-.background_img {
-  width: 100%;
-}
-
 </style>
