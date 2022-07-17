@@ -61,7 +61,7 @@ export default {
         this.user.name == "Admin" && this.user.password == "12345"
           ? this.updateInfoLogged({
               name: this.user.name,
-            }) && this.$router.go({ name: "todo" })
+            }) && this.$router.go({ name: "/" })
           : alert("Username or password entered incorrectly");
       }
     },
