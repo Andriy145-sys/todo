@@ -39,8 +39,16 @@ export default {
 </script>
 
 <style>
-.main {
-  display: block;
+@media only screen and (max-width: 768px) {
+  .main {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main {
+    display: flex;
+    width: 80%;
+  }
 }
 </style >
 <style scoped>
@@ -74,10 +82,6 @@ export default {
     background-image: url(@/assets/Фон.svg);
     background-repeat: no-repeat;
     padding-top: 12%;
-  }
-  .main {
-    display: flex;
-    width: 80%;
   }
   .main_text {
     font-weight: 400;
