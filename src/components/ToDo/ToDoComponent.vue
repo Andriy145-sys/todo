@@ -48,8 +48,8 @@ export default {
   },
   data: () => ({
     toDoList: [
-      { id: 1, title: "Title", isCompleted: false },
-      { id: 2, title: "Title2", isCompleted: false },
+      { id: 1, title: "Successfully complete the test task", isCompleted: true },
+      { id: 2, title: "Prepare for a technical interview", isCompleted: false },
     ],
     task: {},
   }),

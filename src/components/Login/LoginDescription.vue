@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 
 @media only screen and (max-width: 768px) {
   .description_text {

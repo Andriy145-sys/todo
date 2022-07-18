@@ -61,7 +61,7 @@ export default {
         this.user.name == "Admin" && this.user.password == "12345"
           ? this.updateInfoLogged({
               name: this.user.name,
-            }) && this.$router.push({ name: "/" })
+            }) && this.$router.push({ name: "todo" })
           : alert("Username or password entered incorrectly");
       }
     },
@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @media only screen and (max-width: 768px) {
   .login_form {
     width: 80%;
@@ -117,6 +117,7 @@ export default {
     background: #ffffff;
     border: 1px solid #9a9a9a;
     font-size: 20px;
+    padding-left: 10px;
   }
   .register_now_btn {
     width: auto;

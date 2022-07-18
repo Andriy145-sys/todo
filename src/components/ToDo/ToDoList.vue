@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2>Your tasks</h2>
-    <div v-if="toDoList.length == 0" style="text-align: center;">
-    <span>Unfortunately, he does not have a task yet</span>
+    <div v-if="toDoList.length == 0" style="text-align: center">
+      <span>Unfortunately, he does not have a task yet</span>
     </div>
     <div v-for="item in toDoList" :key="item.id">
       <div :class="item.isCompleted ? 'todo_list_active' : 'todo_list'">
@@ -21,7 +21,7 @@
         <span
           v-else
           class="material-icons edit_icon"
-          style="color: green"
+          style="color: green; padding-bottom: 5px;"
           @click="itemEditID = null"
           >check</span
         >
@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .checkbox {
   content: "";
   border: 1px solid light;
@@ -58,8 +58,8 @@ export default {
 @media only screen and (max-width: 768px) {
   .todo_list {
     display: flex;
-    text-align: center;
-    align-self: center;
+    justify-content: space-between;
+    text-align: start;
     margin-top: 20px;
     font-size: 26px;
     width: 90%;
@@ -70,8 +70,8 @@ export default {
   }
   .todo_list_active {
     display: flex;
-    text-align: center;
-    align-self: center;
+    justify-content: space-between;
+    text-align: start;
     margin-top: 20px;
     font-size: 26px;
     width: 90%;
@@ -82,12 +82,17 @@ export default {
     border-radius: 5px;
     opacity: 0.3;
   }
+  .edit_icon {
+  cursor: pointer;
+  align-self: start;
+  color: #0076c0;
+}
 }
 @media only screen and (min-width: 768px) {
   .todo_list {
     display: flex;
-    text-align: center;
-    align-self: center;
+    justify-content: space-between;
+    text-align: start;
     margin-top: 20px;
     font-size: 26px;
     width: 60%;
@@ -98,8 +103,8 @@ export default {
   }
   .todo_list_active {
     display: flex;
-    text-align: center;
-    align-self: center;
+    justify-content: space-between;
+    text-align: start;
     margin-top: 20px;
     font-size: 26px;
     width: 60%;
@@ -110,12 +115,11 @@ export default {
     border-radius: 5px;
     opacity: 0.3;
   }
-}
-.edit_icon {
+  .edit_icon {
   cursor: pointer;
-  text-align: end;
-  width: 90%;
+  align-self: end;
   color: #0076c0;
+}
 }
 .edit_input {
   width: 90%;
