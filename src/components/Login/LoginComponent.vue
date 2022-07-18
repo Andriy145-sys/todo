@@ -12,7 +12,7 @@
     </div>
     <div class="main_div">
       <center>
-        <div class="main_content">
+        <div class="main">
           <div class="main_text">
             <span
               >Welcome to<br />
@@ -38,15 +38,17 @@ export default {
 };
 </script>
 
+<style>
+.main {
+  display: block;
+}
+</style >
 <style scoped>
 @media only screen and (max-width: 768px) {
   .main_div {
     background-image: url(@/assets/Фон.svg);
     background-repeat: no-repeat;
     padding-top: 10px;
-  }
-  .main_content {
-    display: block;
   }
   .main_text {
     font-weight: 400;
