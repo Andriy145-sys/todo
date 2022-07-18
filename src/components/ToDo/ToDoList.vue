@@ -1,10 +1,30 @@
 <template>
   <div>
     <h2>Your tasks</h2>
+    <div v-if="toDoList.length == 0" style="text-align: center;">
+    <span>Unfortunately, he does not have a task yet</span>
+    </div>
     <div v-for="item in toDoList" :key="item.id">
       <div :class="item.isCompleted ? 'todo_list_active' : 'todo_list'">
         <input class="checkbox" type="checkbox" v-model="item.isCompleted" />
-        <span>{{ item.title }}</span>
+        <span v-if="item.id !== itemEditID">{{ item.title }}</span>
+        <input v-else v-model="item.title" class="edit_input" />
+        <div v-if="item.id !== itemEditID" class="edit_icon">
+          <span class="material-icons" @click="itemEditID = item.id">edit</span>
+          <span
+            class="material-icons"
+            style="color: red"
+            @click="$emit('delete', item.id)"
+            >delete</span
+          >
+        </div>
+        <span
+          v-else
+          class="material-icons edit_icon"
+          style="color: green"
+          @click="itemEditID = null"
+          >check</span
+        >
       </div>
     </div>
   </div>
@@ -12,6 +32,9 @@
 
 <script>
 export default {
+  data: () => ({
+    itemEditID: null,
+  }),
   props: {
     toDoList: {
       require: true,
@@ -29,6 +52,7 @@ export default {
   border-radius: 3px;
   background-color: white;
   margin-right: 10px;
+  accent-color: green;
 }
 
 @media only screen and (max-width: 768px) {
@@ -86,5 +110,19 @@ export default {
     border-radius: 5px;
     opacity: 0.3;
   }
+}
+.edit_icon {
+  cursor: pointer;
+  text-align: end;
+  width: 90%;
+  color: #0076c0;
+}
+.edit_input {
+  width: 90%;
+  align-self: center;
+  font-size: 24px;
+  padding: 1px;
+  border: 1px solid silver;
+  border-radius: 5px;
 }
 </style>

@@ -29,7 +29,7 @@
             </button>
           </div>
         </form>
-        <to-do-list-vue :toDoList="toDoList" />
+        <to-do-list-vue :toDoList="toDoList" @delete="deleteItem"/>
       </div>
     </center>
   </div>
@@ -72,6 +72,9 @@ export default {
         this.$v.$reset();
       }
     },
+    deleteItem(id){
+       this.toDoList = this.toDoList.filter((item) => item.id !== id);
+    }
   },
   computed: {
     ...mapGetters(["loggedUser"]),
