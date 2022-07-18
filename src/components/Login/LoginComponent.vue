@@ -12,7 +12,7 @@
     </div>
     <div class="main_div">
       <center>
-        <div class="main">
+        <div class="main_content">
           <div class="main_text">
             <span
               >Welcome to<br />
@@ -38,21 +38,11 @@ export default {
 };
 </script>
 
-<style>
+<style >
 @media only screen and (max-width: 768px) {
-  .main {
+  .main_content {
     display: block;
   }
-}
-@media only screen and (min-width: 768px) {
-  .main {
-    display: flex;
-    width: 80%;
-  }
-}
-</style >
-<style scoped>
-@media only screen and (max-width: 768px) {
   .main_div {
     background-image: url(@/assets/Фон.svg);
     background-repeat: no-repeat;
@@ -78,6 +68,10 @@ export default {
   }
 }
 @media only screen and (min-width: 768px) {
+  .main_content {
+    display: flex;
+    width: 80%;
+  }
   .main_div {
     background-image: url(@/assets/Фон.svg);
     background-repeat: no-repeat;
